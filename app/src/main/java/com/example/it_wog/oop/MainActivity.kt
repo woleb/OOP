@@ -10,10 +10,32 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //initializing
         var spieler1 : Spieler = Spieler (name =  "Thomas", punkte =  0)
-        var spieler2 : Spieler = Spieler(name = "Hanna" , punkte = 33)
+        var spieler2 : Spieler = Spieler(name = "Hanna" , punkte = 0)
 
-        var text = "Spieler ${spieler1.name} hat ${spieler1.punkte}, ${spieler2.name} hat ${spieler2.punkte}"
-        textfeld.text=text
+        //spieler2.punkte = 44
+
+        //var text = "Spieler ${spieler1.name} hat ${spieler1.punkte}, ${spieler2.name} hat ${spieler2.punkte}"
+        //textfeld.text=text
+
+        //Spieler1 button
+        button1.setOnClickListener {
+
+            spieler1.gewinnt()
+
+            var text = "Spieler ${spieler1.name} hat ${spieler1.punkte}, ${spieler2.name} hat ${spieler2.punkte}"
+            textfeld.text = text
+        }
+
+        //Spieler2 button
+        button2.setOnClickListener {
+
+            spieler2.gewinnt()
+
+            var text = "Spieler ${spieler1.name} hat ${spieler1.punkte}, ${spieler2.name} hat ${spieler2.punkte}"
+            textfeld.text = text
+        }
+
     }
 }
